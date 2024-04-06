@@ -345,11 +345,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 975353044}
   m_LocalRotation: {x: -0, y: 0.0032755262, z: -0, w: 0.99999464}
-  m_LocalPosition: {x: 1.88, y: -5.19, z: -0.01}
+  m_LocalPosition: {x: 1.89, y: -5.25, z: -0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1542248073}
+  - {fileID: 2033491069}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0.375, z: 0}
@@ -386,16 +387,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84b6b6b4c0ac20641b67555c722bf95a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundCheck: {fileID: 2033491069}
+  groundCheckDistance: 0.15
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 8
   moveSpeed: 7
   jumpForce: 12
   dashSpeed: 25
   dashDuration: 0.25
-  dashTime: 0
   dashCooldown: 1.4
-  groundCheckDistance: 1.4
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 8
+  comboTime: 1
 --- !u!70 &975353051
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -534,6 +536,7 @@ GameObject:
   - component: {fileID: 1542248073}
   - component: {fileID: 1542248074}
   - component: {fileID: 1542248075}
+  - component: {fileID: 1542248076}
   m_Layer: 0
   m_Name: Animator
   m_TagString: Untagged
@@ -549,7 +552,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1542248072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.493, y: 0, z: 0}
+  m_LocalPosition: {x: 0.49, y: -0.18, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -629,3 +632,46 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1542248076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542248072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e0dfb6fda2e0ea46849449321fb84df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &2033491068
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2033491069}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2033491069
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033491068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.17, y: -1.56, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 975353046}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
